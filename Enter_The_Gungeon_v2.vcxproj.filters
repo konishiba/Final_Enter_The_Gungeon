@@ -217,6 +217,27 @@
     <Filter Include="Scripts\Examples\CustomActor">
       <UniqueIdentifier>{f2a2544c-d591-4624-960a-2225b3eb45ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enter_The_Gungeon">
+      <UniqueIdentifier>{9047dd13-0d3d-45f0-ac19-238e405490e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\Actor">
+      <UniqueIdentifier>{b6b349c7-d7e2-4e3b-896f-6221f73a1d16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\Component">
+      <UniqueIdentifier>{5384c614-9443-47b5-b356-01f51c0df107}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\GameMode">
+      <UniqueIdentifier>{725bf302-d77e-4b21-9374-b18cf17d3a90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\Level">
+      <UniqueIdentifier>{11729294-a798-46ef-bedd-56089499380b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\Manager">
+      <UniqueIdentifier>{0451b3ba-799e-4e72-8d71-c950cdc2725d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\Widget">
+      <UniqueIdentifier>{e7d0c46f-533c-4346-84ef-9ad01970b3bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
