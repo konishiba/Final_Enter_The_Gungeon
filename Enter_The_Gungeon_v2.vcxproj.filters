@@ -238,6 +238,30 @@
     <Filter Include="Enter_The_Gungeon\Widget">
       <UniqueIdentifier>{e7d0c46f-533c-4346-84ef-9ad01970b3bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enter_The_Gungeon\Level\Proto">
+      <UniqueIdentifier>{cafbe254-ac2d-4b80-8115-44629a3ba9f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\GameMode\Proto">
+      <UniqueIdentifier>{39b8bca8-99a5-4ec8-842f-2452bd7aeac1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\Manager\Proto">
+      <UniqueIdentifier>{59d9d9a3-71ae-4194-8493-d80b44813307}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\Widget\Proto">
+      <UniqueIdentifier>{089d72fb-6f17-48f5-bf28-1b66f7c29127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\Component\Proto">
+      <UniqueIdentifier>{08e73d68-634b-4b72-8a84-9cc29457d228}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\Actor\Proto">
+      <UniqueIdentifier>{46884400-6ed5-43e7-b288-ed7fd48f2781}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\Actor\Character">
+      <UniqueIdentifier>{26bb2840-1f55-472c-ae48-2b2fe30ab55f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\Actor\Props">
+      <UniqueIdentifier>{c7d06890-b097-4a29-93bb-bb9ac43bd20d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
