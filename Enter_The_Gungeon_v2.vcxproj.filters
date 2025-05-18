@@ -262,6 +262,15 @@
     <Filter Include="Enter_The_Gungeon\Actor\Props">
       <UniqueIdentifier>{c7d06890-b097-4a29-93bb-bb9ac43bd20d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enter_The_Gungeon\PlayerController">
+      <UniqueIdentifier>{21bd361b-af8e-487f-af68-5a0a1dce41f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\PlayerController\Proto">
+      <UniqueIdentifier>{670889ab-0109-4243-aeb6-3d341eae7edd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enter_The_Gungeon\Hud">
+      <UniqueIdentifier>{2a732c5d-3ab8-4074-bfc4-fc3e1eef1b99}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -476,6 +485,21 @@
     </ClCompile>
     <ClCompile Include="Singleton.h">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ETG_GameplayGamemode.cpp">
+      <Filter>Enter_The_Gungeon\GameMode\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="ETG_GameplayPlayerController.cpp">
+      <Filter>Enter_The_Gungeon\PlayerController\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="ETG_CharacterPawn.cpp">
+      <Filter>Enter_The_Gungeon\Actor\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="ETG_CharacterLevel.cpp">
+      <Filter>Enter_The_Gungeon\Level\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="ETG_GameplayHud.cpp">
+      <Filter>Enter_The_Gungeon\Hud</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -718,6 +742,21 @@
     </ClInclude>
     <ClInclude Include="CustomActor.h">
       <Filter>Scripts\Examples\CustomActor</Filter>
+    </ClInclude>
+    <ClInclude Include="ETG_GameplayGamemode.h">
+      <Filter>Enter_The_Gungeon\GameMode\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="ETG_GameplayPlayerController.h">
+      <Filter>Enter_The_Gungeon\PlayerController\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="ETG_CharacterPawn.h">
+      <Filter>Enter_The_Gungeon\Actor\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="ETG_CharacterLevel.h">
+      <Filter>Enter_The_Gungeon\Level\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="ETG_GameplayHud.h">
+      <Filter>Enter_The_Gungeon\Hud</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

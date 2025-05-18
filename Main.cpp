@@ -1,6 +1,7 @@
 #include "Engine.h"
 #include "LevelManager.h"
-
+#include "CUSTOMLevel.h"
+#include "ETG_CharacterLevel.h"
 
 void InitConfig()
 {
@@ -12,11 +13,11 @@ void InitConfig()
 int main()
 {
 	InitConfig();
-
+	ETG_CharacterLevel* _level = new ETG_CharacterLevel("TEST");
 	//TESTLevel* _level = new TESTLevel("TESTLevel");
-	//M_LEVEL.SetLevel(_level);
-
 	Engine _engine;
+	M_LEVEL.SetLevel(_level);
+
 	_engine.Start();
 
 	return EXIT_SUCCESS;
