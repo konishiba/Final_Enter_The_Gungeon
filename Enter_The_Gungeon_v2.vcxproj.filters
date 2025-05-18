@@ -477,6 +477,18 @@
     <ClCompile Include="Singleton.h">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="Gun.cpp">
+      <Filter>Enter_The_Gungeon\Actor\Props</Filter>
+    </ClCompile>
+    <ClCompile Include="GunComponent.cpp">
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Enter_The_Gungeon\Actor\Props</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletMovementComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoreMinimal.h">
@@ -718,6 +730,24 @@
     </ClInclude>
     <ClInclude Include="CustomActor.h">
       <Filter>Scripts\Examples\CustomActor</Filter>
+    </ClInclude>
+    <ClInclude Include="Gun.h">
+      <Filter>Enter_The_Gungeon\Actor\Props</Filter>
+    </ClInclude>
+    <ClInclude Include="Rarity.h">
+      <Filter>Enter_The_Gungeon\Actor\Props</Filter>
+    </ClInclude>
+    <ClInclude Include="GunData.h">
+      <Filter>Enter_The_Gungeon\Actor\Props</Filter>
+    </ClInclude>
+    <ClInclude Include="GunComponent.h">
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Enter_The_Gungeon\Actor\Props</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletMovementComponent.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
