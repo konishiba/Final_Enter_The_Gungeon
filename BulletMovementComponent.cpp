@@ -9,11 +9,11 @@ BulletMovementComponent::BulletMovementComponent(AActor* _owner, const float _sp
 	direction = _direction;
 }
 
-BulletMovementComponent::BulletMovementComponent(AActor* _owner, const BulletMovementComponent* _other)
+BulletMovementComponent::BulletMovementComponent(AActor* _owner, const BulletMovementComponent& _other)
 	: UComponent(_owner)
 {
-	speed = _other->speed;
-	direction = _other->direction;
+	speed = _other.speed;
+	direction = _other.direction;
 }
 
 BulletMovementComponent::~BulletMovementComponent()

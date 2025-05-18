@@ -262,6 +262,9 @@
     <Filter Include="Enter_The_Gungeon\Actor\Props">
       <UniqueIdentifier>{c7d06890-b097-4a29-93bb-bb9ac43bd20d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enter_The_Gungeon\Actor\Props\Guns">
+      <UniqueIdentifier>{79a73dc8-eea4-47d6-87eb-db74423d0397}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -477,17 +480,20 @@
     <ClCompile Include="Singleton.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="Gun.cpp">
-      <Filter>Enter_The_Gungeon\Actor\Props</Filter>
-    </ClCompile>
     <ClCompile Include="GunComponent.cpp">
       <Filter>Enter_The_Gungeon\Component</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>Enter_The_Gungeon\Actor\Props</Filter>
-    </ClCompile>
     <ClCompile Include="BulletMovementComponent.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClCompile>
+    <ClCompile Include="Gun.cpp">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClCompile>
+    <ClCompile Include="RustySidearm.cpp">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -731,23 +737,26 @@
     <ClInclude Include="CustomActor.h">
       <Filter>Scripts\Examples\CustomActor</Filter>
     </ClInclude>
-    <ClInclude Include="Gun.h">
-      <Filter>Enter_The_Gungeon\Actor\Props</Filter>
-    </ClInclude>
-    <ClInclude Include="Rarity.h">
-      <Filter>Enter_The_Gungeon\Actor\Props</Filter>
-    </ClInclude>
-    <ClInclude Include="GunData.h">
-      <Filter>Enter_The_Gungeon\Actor\Props</Filter>
-    </ClInclude>
     <ClInclude Include="GunComponent.h">
       <Filter>Enter_The_Gungeon\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>Enter_The_Gungeon\Actor\Props</Filter>
-    </ClInclude>
     <ClInclude Include="BulletMovementComponent.h">
-      <Filter>Header Files</Filter>
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="Gun.h">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="GunData.h">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="Rarity.h">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="RustySidearm.h">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

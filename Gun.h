@@ -4,7 +4,7 @@
 #include "GunData.h"
 #include "GunComponent.h"
 
-class Gun : AMeshActor
+class Gun : public AMeshActor
 {
 protected:
 	GunComponent* gunComponent;

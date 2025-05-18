@@ -3,12 +3,17 @@
 
 Gun::Gun(Level* _level, const RectangleShapeData& _shapeData, const string& _name, const Rarity& _rarity, GunData* _data) : AMeshActor(_level, _shapeData)
 {
+	SetScale({ 2.f,2.f });
+	rarity = _rarity;
+	data = _data;
+	gunComponent = CreateDefaultSubobject<GunComponent>(data);
 }
 
 Gun::Gun(const Gun& _other) : AMeshActor(_other)
 {
 	rarity = _other.rarity;
-	gunComponent = CreateDefaultSubobject<GunComponent>(_other.data);
+	data = _other.data;
+	gunComponent = CreateDefaultSubobject<GunComponent>(_other.gunComponent);
 }
 
 Gun::~Gun()

@@ -187,6 +187,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MeshActor.cpp" />
+    <ClCompile Include="RustySidearm.cpp" />
     <ClCompile Include="StaticMeshComponent.cpp" />
     <ClCompile Include="PanelWidget.cpp" />
     <ClCompile Include="Particle.cpp" />
@@ -270,6 +271,7 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="Macro.h" />
     <ClInclude Include="MeshActor.h" />
     <ClInclude Include="Rarity.h" />
+    <ClInclude Include="RustySidearm.h" />
     <ClInclude Include="StaticMeshComponent.h" />
     <ClInclude Include="PanelWidget.h" />
     <ClInclude Include="Particle.h" />

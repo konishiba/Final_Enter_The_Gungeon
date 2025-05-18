@@ -2,12 +2,13 @@
 #include "MeshActor.h"
 #include "BulletMovementComponent.h"
 #include "CollisionComponent.h"
+#include "GunData.h"
 
 class Bullet : public AMeshActor
 {
+protected:
 	bool isFired;
 	int speed;
-
 	float damage;
 	int range;
 	Vector2f posInit;
@@ -23,14 +24,17 @@ public:
 	{
 		return movement;
 	}
+	FORCEINLINE float GetDamage() const
+	{
+		return damage;
+	}
 	FORCEINLINE void SetDirection(const Vector2f& _direction)
 	{
 		movement->SetDirection(_direction);
 	}
 public:
-	Bullet(Level* _level, const CircleShapeData& _data, const string& _name, const float _damage, const int _speed, const float _range, const Vector2f& _direction);
-
-	Bullet(const Bullet& _other);
+	Bullet(Level* _level, const CircleShapeData& _data, const string& _name, const GunData* _gunData);
+	Bullet(Level* _level, const Bullet& _other);
 
 
 public:

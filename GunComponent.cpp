@@ -32,21 +32,33 @@ void GunComponent::BeginPlay()
 	isInReload = false;
 }
 
-void GunComponent::Shoot(const Vector2f& _direction)
+void GunComponent::Shoot(const Vector2f& _direction, const Vector2f& _ownerSize)
 {
-	Bullet* _currentBullet = (*current);
-	if (_currentBullet->IsActive() == false && isInReload == false)
+	float _principalAngle = atan2(_direction.x, _direction.y);
+
+	for (int _i = 0; _i < data->bulletPerShoot; _i++)
 	{
-		_currentBullet->SetPosition(owner->GetPosition());
-		_currentBullet->SetDirection(_direction);
-		_currentBullet->Launch();
+		Bullet* _currentBullet = (*current);
+
+		if (!_currentBullet->IsActive() && !isInReload)
+		{
+			Vector2f _finalDirection = _direction;
+
+			if (data->bulletPerShoot > 1)
+			{
+				_finalDirection = ComputeFinalDirectionWithSpread(_i, _direction, _principalAngle);
+			}
+			_currentBullet->SetPosition({ owner->GetPosition().x + _ownerSize.x, owner->GetPosition().y - (_ownerSize.y / 2) });
+			_currentBullet->SetDirection(_finalDirection);
+			_currentBullet->Launch();
+		}
+		if (current == bullets.end() - 1)
+		{
+			isInReload = true;
+			return;
+		}
+		current++;
 	}
-	if (current == bullets.end() - 1)
-	{
-		isInReload = true;
-	}
-	if (bullets.size() == 1) return;
-	current++;
 }
 
 void GunComponent::Reload()
@@ -56,4 +68,18 @@ void GunComponent::Reload()
 			current = bullets.begin();
 			isInReload = false;
 		}, seconds(data->reloadTime), true, false);
+}
+
+
+Vector2f GunComponent::ComputeFinalDirectionWithSpread(const int _index, const Vector2f& _direction, const float _principalAngle)
+{
+	float _facteur = (_index - (data->bulletPerShoot - 1) / 2.0f);
+	float _angleOffset = (_facteur * data->spread / (data->bulletPerShoot - 1)) * (3.14159265f / 180.0f);
+
+	float _finalAngle = _principalAngle + _angleOffset;
+
+	const Vector2f& _finalDirection = { _direction.x * cos(_angleOffset) - _direction.y * sin(_angleOffset),
+		_direction.x * sin(_angleOffset) + _direction.y * cos(_angleOffset) };
+
+	return _finalDirection;
 }

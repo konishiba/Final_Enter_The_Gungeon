@@ -1,26 +1,24 @@
 #include "Bullet.h"
-#include "Actor.h"
 
-Bullet::Bullet(Level* _level, const CircleShapeData& _data, const string& _name, const float _damage, const int _speed, const float _range, const Vector2f& _direction)
-
+Bullet::Bullet(Level* _level, const CircleShapeData& _data, const string& _name, const GunData* _gunData)
 	: AMeshActor(_level, _data, _name)
 {
 	isFired = false;
-	damage = _damage;
-	speed = _speed * 10.0f;
-	range = _range;
-
-	movement = CreateDefaultSubobject<BulletMovementComponent>(speed, _direction);
-
+	damage = _gunData->damage;
+	speed = _gunData->shotSpeed * 10.0f;
+	range = _gunData->range * 10.0f;
+	movement = CreateDefaultSubobject<BulletMovementComponent>(speed, Vector2f());
+	SetLayerType(PROJECTILE);
+	//collision->SetInformation("Bullet", InteractStatus::IS_ALL, CT_OVERLAP, false);
 }
 
-Bullet::Bullet(const Bullet& _other) : AMeshActor(_other)
+Bullet::Bullet(Level* _level, const Bullet& _other) : AMeshActor(_other)
 {
 	isFired = _other.isFired;
 	damage = _other.damage;
 	speed = _other.speed;
 	range = _other.range;
-	movement = CreateDefaultSubobject<BulletMovementComponent>(_other.movement);
+	movement = CreateDefaultSubobject<BulletMovementComponent>(*_other.movement);
 }
 
 
@@ -34,7 +32,7 @@ void Bullet::Launch()
 void Bullet::Construct()
 {
 	Super::Construct();
-	//startPosition = GetPosition();
+
 }
 
 void Bullet::Deconstruct()
@@ -45,12 +43,14 @@ void Bullet::Deconstruct()
 void Bullet::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
-
 	if (isFired)
 	{
 		if (range <= ComputeDistTraveled())
 		{
+			//TODO changer cette merde
+			SetPosition({ 1000000,1000000 });
 			SetActive(false);
 		}
 	}
+
 }

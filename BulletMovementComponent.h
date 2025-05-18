@@ -7,7 +7,17 @@ protected:
 	Vector2f direction;
 
 public:
-	FORCEINLINE void SetDirection(const Vector2f& _direction)
+
+
+	FORCEINLINE float GetSpeed() const
+	{
+		return speed;
+	}
+	FORCEINLINE void SetSpeed(const float _speed)
+	{
+		speed = _speed;
+	}
+	FORCEINLINE void SetDirection(Vector2f _direction)
 	{
 		direction = _direction;
 	}
@@ -21,13 +31,13 @@ public:
 	}
 	FORCEINLINE virtual UComponent* Clone(AActor* _owner) const
 	{
-		return new BulletMovementComponent(_owner, this);
+		return new BulletMovementComponent(_owner, *this);
 	}
 public:
 	BulletMovementComponent(AActor* _owner, const float _speed = 10.0f,
 		const Vector2f& _direction = Vector2f());
 
-	BulletMovementComponent(AActor* _owner, const BulletMovementComponent* _other);
+	BulletMovementComponent(AActor* _owner, const BulletMovementComponent& _other);
 
 	virtual ~BulletMovementComponent();
 
