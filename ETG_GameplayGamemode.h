@@ -2,7 +2,6 @@
 #include "GameMode.h"
 #include "ETG_GameplayPlayerController.h"
 #include "ETG_GameplayHud.h"
-#include "CUSTOMHUD.h"
 
 class ETG_GameplayGamemode : public GameMode
 {

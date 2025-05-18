@@ -8,7 +8,7 @@ class ETG_CharacterPawn : public APawn
 	UStaticMeshComponent* mesh;
 	Camera::UCameraComponent* camera;
 public:
-	ETG_CharacterPawn(Level* _level, const string& _name = "CUSTOM Pawn");
+	ETG_CharacterPawn(Level* _level, const string& _name = " PlayerPawn");
 	ETG_CharacterPawn(const ETG_CharacterPawn& _other);
 
 protected:

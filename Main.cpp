@@ -14,7 +14,6 @@ int main()
 {
 	InitConfig();
 	ETG_CharacterLevel* _level = new ETG_CharacterLevel("TEST");
-	//TESTLevel* _level = new TESTLevel("TESTLevel");
 	Engine _engine;
 	M_LEVEL.SetLevel(_level);
 

@@ -1,5 +1,8 @@
 #pragma once
 #include "PlayerController.h"
+
+class ETG_CharacterPawn;
+
 class ETG_GameplayPlayerController : public PlayerController
 {
 public:

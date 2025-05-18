@@ -5,7 +5,7 @@
 
 class ETG_CharacterLevel : public Level
 {
-
+	ETG_CharacterPawn* player;
 public:
 	FORCEINLINE virtual ETG_GameplayGamemode* GetGameModeRef() override
 	{
