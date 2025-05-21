@@ -501,6 +501,12 @@
     <ClCompile Include="ETG_GameplayHud.cpp">
       <Filter>Enter_The_Gungeon\Hud</Filter>
     </ClCompile>
+    <ClCompile Include="ETG_MovementComponent.cpp">
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="ETG_PlayerMovementComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoreMinimal.h">
@@ -757,6 +763,12 @@
     </ClInclude>
     <ClInclude Include="ETG_GameplayHud.h">
       <Filter>Enter_The_Gungeon\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="ETG_MovementComponent.h">
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ETG_PlayerMovementComponent.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

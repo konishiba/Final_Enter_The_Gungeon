@@ -2,10 +2,12 @@
 #include "Pawn.h"
 #include "StaticMeshComponent.h"
 #include "CameraComponent.h"
+#include "ETG_PlayerMovementComponent.h"
 
 class ETG_CharacterPawn : public APawn
 {
 	UStaticMeshComponent* mesh;
+	ETG_PlayerMovementComponent* movement;
 	Camera::UCameraComponent* camera;
 public:
 	ETG_CharacterPawn(Level* _level, const string& _name = " PlayerPawn");

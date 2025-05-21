@@ -7,13 +7,17 @@ ETG_CharacterPawn::ETG_CharacterPawn(Level* _level, const string& _name) : APawn
 {
 	mesh = CreateDefaultSubobject<UStaticMeshComponent>(RectangleShapeData(Vector2f(50.0f, 50.0f)));
 	camera = CreateDefaultSubobject<UCameraComponent>(_level->GetWindowSize() / 2.0f, _level->GetWindowSize());
+	movement = CreateDefaultSubobject<ETG_PlayerMovementComponent>();
 	_level->GetCameraManager().Register(camera);
+
+	mesh->SetupAttachment(root);
 }
 
 ETG_CharacterPawn::ETG_CharacterPawn(const ETG_CharacterPawn& _other) :APawn(_other)
 {
 	mesh = CreateDefaultSubobject<UStaticMeshComponent>(*_other.mesh);
 	camera = CreateDefaultSubobject<UCameraComponent>(*_other.camera);
+	movement = CreateDefaultSubobject<ETG_PlayerMovementComponent>(*_other.movement);
 }
 
 void ETG_CharacterPawn::SetupInputController(Input::InputManager& _inputManager)
@@ -22,25 +26,45 @@ void ETG_CharacterPawn::SetupInputController(Input::InputManager& _inputManager)
 
 	_moveInputs->AddActions(
 		{
-			new Action("Up", ActionData(KeyPressed, Z), [&]()
+			new Action("Up", ActionData(KeyHold, Z), [&]()
 			{
-				LOG(Warning, "Z");
-				//movement->AddVelocity(Vector2f(0.0f, 1.0f));
+				movement->ProcessInput(Vector2f(0.f,-1.0f));
 			}),
+			new Action("UpRelease", ActionData(KeyReleased, Z), [&]()
+			{
+				movement->Reset();
+			}),
+
 			new Action("Down", ActionData(KeyHold, S), [&]()
 			{
-				LOG(Warning, "S");
-				//movement->AddVelocity(Vector2f(0.0f, -1.0f));
+				movement->ProcessInput(Vector2f(0.f, 1.0f));
 			}),
+			new Action("DownRelease", ActionData(KeyReleased, S), [&]()
+			{
+				movement->Reset();
+			}),
+
 			new Action("Left", ActionData(KeyHold, Q), [&]()
 			{
-				LOG(Warning, "Q");
-				//movement->AddVelocity(Vector2f(-1.0f, 0.0f));
+				movement->ProcessInput(Vector2f(-1.f, 0.f));
 			}),
+			new Action("LeftRelease", ActionData(KeyReleased, Q), [&]()
+			{
+				movement->Reset();
+			}),
+
 			new Action("Right", ActionData(KeyHold, D), [&]()
 			{
-				LOG(Warning, "D");
-				//movement->AddVelocity(Vector2f(1.0f, 0.0f));
+				movement->ProcessInput(Vector2f(1.f, 0.f));
+			}),
+			new Action("RightRelease", ActionData(KeyReleased, D), [&]()
+			{
+				movement->Reset();
+			}),
+
+			new Action("Dodge", ActionData(KeyHold, Space), [&]()
+			{
+				movement->Dodge();
 			}),
 		});
 
