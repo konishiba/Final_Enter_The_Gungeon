@@ -481,6 +481,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ACursorProtoCollision.cpp">
+    <ClCompile Include="Proto_Map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -729,6 +733,10 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ACursorProtoCollision.h">
+    <ClInclude Include="Proto_Map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

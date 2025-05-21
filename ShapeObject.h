@@ -143,6 +143,11 @@ public:
 	{
 		return shape;
 	}
+	FORCEINLINE virtual Vector2f GetPosition() const
+	{
+		return shape->getPosition();
+	}
+
 	FORCEINLINE virtual void SetOrigin(const Vector2f& _origin) override
 	{
 		shape->setOrigin(_origin);
