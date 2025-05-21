@@ -132,12 +132,14 @@ vector<Vector2f> Bounds::GetPoints() const
 
 vector<Vector2f> Bounds::GetPoints(RectangleBoundsData* _data) const
 {
+	Vector2f halfSize = _data->size / 2.0f;
+
 	return vector<Vector2f>
 	{
-		Around(_data->position + _data->size / 2.0f, _data),
-		Around(_data->position - _data->size / 2.0f, _data),
-		Around(Vector2f(_data->position.x + _data->size.x / 2.0f, _data->position.y - _data->size.y / 2.0f), _data),
-		Around(Vector2f(_data->position.x - _data->size.x / 2.0f, _data->position.y + _data->size.y / 2.0f), _data)
+		Around(Vector2f(_data->position.x - halfSize.x, _data->position.y - halfSize.y), _data), // bottom-left
+			Around(Vector2f(_data->position.x + halfSize.x, _data->position.y - halfSize.y), _data), // bottom-right
+			Around(Vector2f(_data->position.x + halfSize.x, _data->position.y + halfSize.y), _data), // top-right
+			Around(Vector2f(_data->position.x - halfSize.x, _data->position.y + halfSize.y), _data)  // top-left
 	};
 }
 
@@ -281,19 +283,37 @@ void Bounds::UpdateBounds(AActor* _actor)
 {
 	if (UStaticMeshComponent* _meshComponent = _actor->GetComponent<UStaticMeshComponent>())
 	{
+		// Récupération de la position de l'origine du mesh
 		const Vector2f& _pos = _meshComponent->GetOwner()->GetPosition();
+
+		// Calcul du décalage pour un rectangle
+		Vector2f offset = Vector2f(0.0f, 0.0f);
+
+		// Si le mesh est un rectangle, le centre est au milieu du rectangle (position + size / 2)
+		if (_meshComponent->GetShape()->GetData().type == SOT_RECTANGLE)
+		{
+			const Vector2f& _size = _meshComponent->GetShape()->GetData().data.rectangleData->size;
+			offset = _size / 2.0f;  // Le centre du rectangle est à (size / 2)
+		}
+
+		// Mise à jour des données de collision pour un cercle
 		if (_meshComponent->GetShape()->GetData().type == SOT_CIRCLE)
 		{
 			const float _radius = _meshComponent->GetShape()->GetData().data.circleData->radius;
 			const u_int& _pointCount = CAST(u_int, _meshComponent->GetShape()->GetData().data.circleData->pointCount);
+
+			// Applique le décalage à la position du cercle
 			SetBoundsData(new CircleBoundsData(_radius, _pos, _pointCount));
 		}
+
+		// Mise à jour des données de collision pour un rectangle
 		if (_meshComponent->GetShape()->GetData().type == SOT_RECTANGLE)
 		{
-
 			const Vector2f& _size = _meshComponent->GetShape()->GetData().data.rectangleData->size;
 			const Angle& _rotation = _meshComponent->GetOwner()->GetRotation();
-			SetBoundsData(new RectangleBoundsData({ _pos, _size }, _rotation));
+
+			// Applique le décalage à la position du rectangle
+			SetBoundsData(new RectangleBoundsData({ _pos + offset, _size }, _rotation));
 		}
 	}
 }
