@@ -27,7 +27,7 @@ void CUSTOMLevel::InitLevel()
 {
 	Super::InitLevel();
 
-	HUD* _hud = GetGameMode()->GetHUD();
+	/*HUD* _hud = GetGameMode()->GetHUD();
 
 	canvas = _hud->SpawnWidget<CanvasWidget>();
 	canvas->SetDebugMode(true);
@@ -85,5 +85,5 @@ void CUSTOMLevel::InitLevel()
 
 	SpawnActor<ParticleActor>(1000, 3.0f);
 
-	GetGameMode()->GetHUD()->AddToViewport(canvas);
+	GetGameMode()->GetHUD()->AddToViewport(canvas);*/
 }

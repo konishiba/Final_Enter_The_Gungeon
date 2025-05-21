@@ -1,5 +1,6 @@
 #include "Engine.h"
 #include "LevelManager.h"
+#include "LVL_ProtoCollision.h"
 
 
 void InitConfig()
@@ -13,8 +14,8 @@ int main()
 {
 	InitConfig();
 
-	//TESTLevel* _level = new TESTLevel("TESTLevel");
-	//M_LEVEL.SetLevel(_level);
+	LVL_ProtoCollision* _level = new LVL_ProtoCollision("TESTLevel");
+	M_LEVEL.SetLevel(_level);
 
 	Engine _engine;
 	_engine.Start();
