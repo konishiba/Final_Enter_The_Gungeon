@@ -3,7 +3,6 @@
 
 class Proto_Map : public Level
 {
-
 public:
 	Proto_Map(const string& _name);
 
