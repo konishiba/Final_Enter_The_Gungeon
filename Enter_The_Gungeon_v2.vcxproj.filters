@@ -477,6 +477,10 @@
     <ClCompile Include="Singleton.h">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="LVL_ProtoCollision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ACursorProtoCollision.cpp">
     <ClCompile Include="Proto_Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -725,6 +729,10 @@
     <ClInclude Include="CustomActor.h">
       <Filter>Scripts\Examples\CustomActor</Filter>
     </ClInclude>
+    <ClInclude Include="LVL_ProtoCollision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ACursorProtoCollision.h">
     <ClInclude Include="Proto_Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>

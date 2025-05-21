@@ -1,5 +1,6 @@
 #include "Engine.h"
 #include "LevelManager.h"
+#include "LVL_ProtoCollision.h"
 #include "Proto_Map.h"
 
 
