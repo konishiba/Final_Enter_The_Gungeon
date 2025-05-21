@@ -171,6 +171,13 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="CUSTOMPawn.cpp" />
     <ClCompile Include="CUSTOMPlayerController.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="ETG_GameplayHud.cpp" />
+    <ClCompile Include="ETG_CharacterLevel.cpp" />
+    <ClCompile Include="ETG_CharacterPawn.cpp" />
+    <ClCompile Include="ETG_GameplayGamemode.cpp" />
+    <ClCompile Include="ETG_GameplayPlayerController.cpp" />
+    <ClCompile Include="ETG_MovementComponent.cpp" />
+    <ClCompile Include="ETG_PlayerMovementComponent.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="GameMode.cpp" />
     <ClCompile Include="GIFWidget.cpp" />
@@ -249,6 +256,13 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="CUSTOMPawn.h" />
     <ClInclude Include="CUSTOMPlayerController.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="ETG_GameplayHud.h" />
+    <ClInclude Include="ETG_CharacterLevel.h" />
+    <ClInclude Include="ETG_CharacterPawn.h" />
+    <ClInclude Include="ETG_GameplayGamemode.h" />
+    <ClInclude Include="ETG_GameplayPlayerController.h" />
+    <ClInclude Include="ETG_MovementComponent.h" />
+    <ClInclude Include="ETG_PlayerMovementComponent.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="GameMode.h" />
