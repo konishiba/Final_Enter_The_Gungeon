@@ -3,6 +3,7 @@
 #include "Rarity.h"
 #include "GunData.h"
 #include "GunComponent.h"
+#include "InputManager.h"
 
 class Gun : public AMeshActor
 {
@@ -27,7 +28,9 @@ public:
 public:
 	virtual void Construct() override;
 	virtual void Deconstruct() override;
+	virtual void Tick(const float _deltaTime) override;
 	virtual void Shoot() = 0;
 	virtual void Reload() = 0;
+	virtual void SetupInputController(Input::InputManager& _inputManager);
 };
 

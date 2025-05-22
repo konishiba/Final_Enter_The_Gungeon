@@ -214,6 +214,8 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="VertexComponent.cpp" />
     <ClCompile Include="VertexObject.cpp" />
     <ClCompile Include="VerticalBox.cpp" />
+    <ClCompile Include="WeaponTestGameMode.cpp" />
+    <ClCompile Include="WeaponTestLevel.cpp" />
     <ClCompile Include="Widget.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -303,6 +305,8 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="VertexComponent.h" />
     <ClInclude Include="VertexObject.h" />
     <ClInclude Include="VerticalBox.h" />
+    <ClInclude Include="WeaponTestGameMode.h" />
+    <ClInclude Include="WeaponTestLevel.h" />
     <ClInclude Include="Widget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

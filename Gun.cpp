@@ -30,3 +30,21 @@ void Gun::Deconstruct()
 {
 	Super::Deconstruct();
 }
+
+void Gun::Tick(const float _deltaTime)
+{
+	Super::Tick(_deltaTime);
+
+}
+
+void Gun::Shoot()
+{
+}
+
+void Gun::Reload()
+{
+}
+
+void Gun::SetupInputController(Input::InputManager& _inputManager)
+{
+}
