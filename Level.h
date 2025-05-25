@@ -37,6 +37,12 @@ public:
 	{
 		return CAST(Vector2f, window.getSize());
 	}
+	FORCEINLINE Vector2f GetPixelTooCoords()const
+	{
+		const Vector2i& _pixelPos = Mouse::getPosition(window);
+		const Vector2f& _PixelToCoords = window.mapPixelToCoords(_pixelPos, *cameraManager.GetCurrent()->GetView());
+		return _PixelToCoords;
+	}
 
 	#pragma endregion
 

@@ -6,7 +6,7 @@ using namespace Input;
 ETG_CharacterPawn::ETG_CharacterPawn(Level* _level, const string& _name) : APawn(_level, _name)
 {
 	mesh = CreateDefaultSubobject<UStaticMeshComponent>(RectangleShapeData(Vector2f(50.0f, 50.0f)));
-	camera = CreateDefaultSubobject<UCameraComponent>(_level->GetWindowSize() / 2.0f, _level->GetWindowSize());
+	camera = CreateDefaultSubobject<ETG_CharacterCameraComponent>();
 	movement = CreateDefaultSubobject<ETG_PlayerMovementComponent>();
 	_level->GetCameraManager().Register(camera);
 
@@ -16,7 +16,7 @@ ETG_CharacterPawn::ETG_CharacterPawn(Level* _level, const string& _name) : APawn
 ETG_CharacterPawn::ETG_CharacterPawn(const ETG_CharacterPawn& _other) :APawn(_other)
 {
 	mesh = CreateDefaultSubobject<UStaticMeshComponent>(*_other.mesh);
-	camera = CreateDefaultSubobject<UCameraComponent>(*_other.camera);
+	camera = CreateDefaultSubobject<ETG_CharacterCameraComponent>(*_other.camera);
 	movement = CreateDefaultSubobject<ETG_PlayerMovementComponent>(*_other.movement);
 }
 

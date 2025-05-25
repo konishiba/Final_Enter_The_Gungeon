@@ -5,6 +5,7 @@ namespace Camera
 {
 	class UCameraComponent : public UComponent
 	{
+	protected:
 		View* view;
 
 	public:
