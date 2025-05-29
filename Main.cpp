@@ -1,6 +1,6 @@
 #include "Engine.h"
 #include "LevelManager.h"
-
+#include "WeaponTestLevel.h"
 
 void InitConfig()
 {
@@ -13,8 +13,8 @@ int main()
 {
 	InitConfig();
 
-	//TESTLevel* _level = new TESTLevel("TESTLevel");
-	//M_LEVEL.SetLevel(_level);
+	WeaponTestlevel* _level = new WeaponTestlevel("LevelTestWeapon");
+	M_LEVEL.SetLevel(_level);
 
 	Engine _engine;
 	_engine.Start();

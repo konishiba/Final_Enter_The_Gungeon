@@ -495,6 +495,15 @@
     <ClCompile Include="RustySidearm.cpp">
       <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
     </ClCompile>
+    <ClCompile Include="WeaponTestLevel.cpp">
+      <Filter>Enter_The_Gungeon\Level\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="RotateToTargetComponent.cpp">
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponTestGameMode.cpp">
+      <Filter>Enter_The_Gungeon\GameMode\Proto</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoreMinimal.h">
@@ -757,6 +766,15 @@
     </ClInclude>
     <ClInclude Include="RustySidearm.h">
       <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="RotateToTargetComponent.h">
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponTestGameMode.h">
+      <Filter>Enter_The_Gungeon\GameMode\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponTestLevel.h">
+      <Filter>Enter_The_Gungeon\Level\Proto</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -21,13 +21,13 @@ public:
 	}
 	FORCEINLINE virtual UComponent* Clone(AActor* _owner) const
 	{
-		return new GunComponent(_owner, this);
+		return new GunComponent(_owner, *this);
 	}
 
 
 public:
-	GunComponent(AActor* _owner, GunData* _data);
-	GunComponent(AActor* _owner, const GunComponent* _other);
+	GunComponent(AActor* _owner, GunData* _data, Bullet _bulletRef);
+	GunComponent(AActor* _owner, const GunComponent& _other);
 
 	virtual ~GunComponent();
 

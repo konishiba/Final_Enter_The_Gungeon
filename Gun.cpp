@@ -1,4 +1,5 @@
 #include "Gun.h"
+#include "LevelManager.h"
 
 
 Gun::Gun(Level* _level, const RectangleShapeData& _shapeData, const string& _name, const Rarity& _rarity, GunData* _data) : AMeshActor(_level, _shapeData)
@@ -6,14 +7,17 @@ Gun::Gun(Level* _level, const RectangleShapeData& _shapeData, const string& _nam
 	SetScale({ 2.f,2.f });
 	rarity = _rarity;
 	data = _data;
-	gunComponent = CreateDefaultSubobject<GunComponent>(data);
+	const Bullet& _bulletRef = Bullet(_level, CircleShapeData(5.0f, "Ball"), "Balle", data);
+	gunComponent = CreateDefaultSubobject<GunComponent>(data, _bulletRef);
+	rotate = CreateDefaultSubobject<RotateToTargetComponent>();
 }
 
 Gun::Gun(const Gun& _other) : AMeshActor(_other)
 {
 	rarity = _other.rarity;
 	data = _other.data;
-	gunComponent = CreateDefaultSubobject<GunComponent>(_other.gunComponent);
+	gunComponent = CreateDefaultSubobject<GunComponent>(*_other.gunComponent);
+	rotate = CreateDefaultSubobject<RotateToTargetComponent>();
 }
 
 Gun::~Gun()
@@ -34,17 +38,9 @@ void Gun::Deconstruct()
 void Gun::Tick(const float _deltaTime)
 {
 	Super::Tick(_deltaTime);
-
-}
-
-void Gun::Shoot()
-{
-}
-
-void Gun::Reload()
-{
-}
-
-void Gun::SetupInputController(Input::InputManager& _inputManager)
-{
+	const RenderWindow& _window = M_LEVEL.GetCurrentLevel()->GetRenderWindow();
+	const Vector2i& _pixelPos = Mouse::getPosition(_window);
+	const Vector2f& _pixelToCoords = _window.mapPixelToCoords(_pixelPos, *M_LEVEL.GetCurrentLevel()->GetCameraManager().GetCurrent()->GetView());
+	rotate->SetTargetPos(_pixelToCoords);
+	rotate->Launch();
 }

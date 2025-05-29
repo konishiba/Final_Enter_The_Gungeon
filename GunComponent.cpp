@@ -3,16 +3,19 @@
 #include "Level.h"
 #include "TimerManager.h"
 
-GunComponent::GunComponent(AActor* _owner, GunData* _data)
+GunComponent::GunComponent(AActor* _owner, GunData* _data, Bullet _bulletRef)
 	: UComponent(_owner)
 {
 	data = _data;
-
+	isInReload = false;
+	data->magazineSize *= data->bulletPerShoot;
+	SetBulletRef(_bulletRef);
 }
-
-GunComponent::GunComponent(AActor* _owner, const GunComponent* _other) : UComponent(_owner)
+GunComponent::GunComponent(AActor* _owner, const GunComponent& _other) : UComponent(_owner)
 {
-	data = _other->data;
+	data = _other.data;
+	isInReload = _other.isInReload;
+	bullet = _other.bullet;
 }
 
 GunComponent::~GunComponent()

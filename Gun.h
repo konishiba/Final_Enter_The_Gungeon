@@ -4,6 +4,7 @@
 #include "GunData.h"
 #include "GunComponent.h"
 #include "InputManager.h"
+#include "RotateToTargetComponent.h"
 
 class Gun : public AMeshActor
 {
@@ -11,6 +12,7 @@ protected:
 	GunComponent* gunComponent;
 	Rarity rarity;
 	GunData* data;
+	RotateToTargetComponent* rotate;
 
 public:
 	FORCEINLINE GunComponent* GetGunComponent() const
@@ -31,6 +33,5 @@ public:
 	virtual void Tick(const float _deltaTime) override;
 	virtual void Shoot() = 0;
 	virtual void Reload() = 0;
-	virtual void SetupInputController(Input::InputManager& _inputManager);
 };
 

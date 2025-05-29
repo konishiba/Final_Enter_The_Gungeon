@@ -12,8 +12,6 @@ RustySidearm::RustySidearm(Level* _level)
 			16, 10, 7, 1))
 {
 
-	const Bullet& _bulletRef = Bullet(_level, CircleShapeData(5.0f, "Ball"), "Balle", data);
-	gunComponent->SetBulletRef(_bulletRef);
 }
 
 RustySidearm::RustySidearm(const RustySidearm& _other)
@@ -24,6 +22,7 @@ RustySidearm::RustySidearm(const RustySidearm& _other)
 void RustySidearm::Construct()
 {
 	Super::Construct();
+
 	SetupInput();
 }
 

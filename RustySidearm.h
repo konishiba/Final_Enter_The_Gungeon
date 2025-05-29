@@ -4,7 +4,6 @@
 
 class RustySidearm : public Gun
 {
-	bool canShoot;
 
 public:
 	FORCEINLINE GunComponent* GetGunComponent() const
