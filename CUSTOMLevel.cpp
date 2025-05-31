@@ -14,6 +14,7 @@
 #include "SliderWidget.h"
 #include "CheckBoxWidget.h"
 #include "PlayerController.h"
+#include "RustySidearm.h"
 
 CUSTOMLevel::CUSTOMLevel(const string& _name) : Level(_name)
 {
@@ -84,6 +85,11 @@ void CUSTOMLevel::InitLevel()
 	}
 
 	SpawnActor<ParticleActor>(1000, 3.0f);
+
+	if (RustySidearm* _sawedOff = SpawnActor<RustySidearm>())
+	{
+		_sawedOff->SetPosition({ 100.0f, 100.0f });
+	}
 
 	GetGameMode()->GetHUD()->AddToViewport(canvas);
 }

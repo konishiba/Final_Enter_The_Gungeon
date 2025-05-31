@@ -1,21 +1,20 @@
 #include "GunComponent.h"
 #include "Bullet.h"
 #include "Level.h"
+#include "LevelManager.h"
 #include "TimerManager.h"
 
-GunComponent::GunComponent(AActor* _owner, GunData* _data, Bullet _bulletRef)
+GunComponent::GunComponent(AActor* _owner, GunData* _data)
 	: UComponent(_owner)
 {
 	data = _data;
 	isInReload = false;
 	data->magazineSize *= data->bulletPerShoot;
-	SetBulletRef(_bulletRef);
 }
 GunComponent::GunComponent(AActor* _owner, const GunComponent& _other) : UComponent(_owner)
 {
 	data = _other.data;
 	isInReload = _other.isInReload;
-	bullet = _other.bullet;
 }
 
 GunComponent::~GunComponent()
@@ -27,7 +26,7 @@ void GunComponent::BeginPlay()
 	for (int _index = 0; _index < data->magazineSize; _index++)
 	{
 		Level* _currentLevel = owner->GetLevel();
-		Bullet* _bullet = _currentLevel->SpawnActor(bullet);
+		Bullet* _bullet = _currentLevel->SpawnActor<Bullet>(CircleShapeData(5.0f, "Ball"), "Balle", data);
 		_bullet->SetActive(false);
 		bullets.push_back(_bullet);
 	}

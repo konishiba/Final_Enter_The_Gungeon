@@ -9,16 +9,11 @@ class GunComponent : public UComponent
 	using Iterator = vector<Bullet*>::iterator;
 
 	bool isInReload;
-	SubclassOf<Bullet> bullet;
 	vector<Bullet*> bullets;
 	Iterator current;
 	GunData* data;
 
 public:
-	FORCEINLINE void SetBulletRef(const Bullet& _ref)
-	{
-		bullet = _ref;
-	}
 	FORCEINLINE virtual UComponent* Clone(AActor* _owner) const
 	{
 		return new GunComponent(_owner, *this);
@@ -26,7 +21,7 @@ public:
 
 
 public:
-	GunComponent(AActor* _owner, GunData* _data, Bullet _bulletRef);
+	GunComponent(AActor* _owner, GunData* _data);
 	GunComponent(AActor* _owner, const GunComponent& _other);
 
 	virtual ~GunComponent();

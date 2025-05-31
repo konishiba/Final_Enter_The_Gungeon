@@ -36,7 +36,7 @@ void WeaponTestlevel::InitLevel()
 
 	if (RustySidearm* _sawedOff = SpawnActor<RustySidearm>())
 	{
-		_sawedOff->SetPosition({ 0.0f, 0.0f });
+		_sawedOff->SetPosition({ 100.0f, 100.0f });
 	}
 	
 

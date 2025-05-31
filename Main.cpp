@@ -1,6 +1,7 @@
 #include "Engine.h"
 #include "LevelManager.h"
 #include "WeaponTestLevel.h"
+#include "CUSTOMLevel.h"
 
 void InitConfig()
 {

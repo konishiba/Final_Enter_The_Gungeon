@@ -7,9 +7,8 @@ Gun::Gun(Level* _level, const RectangleShapeData& _shapeData, const string& _nam
 	SetScale({ 2.f,2.f });
 	rarity = _rarity;
 	data = _data;
-	const Bullet& _bulletRef = Bullet(_level, CircleShapeData(5.0f, "Ball"), "Balle", data);
-	gunComponent = CreateDefaultSubobject<GunComponent>(data, _bulletRef);
 	rotate = CreateDefaultSubobject<RotateToTargetComponent>();
+	gunComponent = CreateDefaultSubobject<GunComponent>(data);
 }
 
 Gun::Gun(const Gun& _other) : AMeshActor(_other)
