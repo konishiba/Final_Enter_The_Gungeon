@@ -28,7 +28,7 @@ public:
 
 public:
 	virtual void BeginPlay() override;
-	virtual void Shoot(const Vector2f& _direction, const Vector2f& _ownerSize);
+	virtual void Shoot(const Vector2f& _direction, const Vector2f& _ownerSize, const Vector2f& _spawnPosition);
 	virtual void Reload();
 	Vector2f ComputeFinalDirectionWithSpread(const int _index, const Vector2f& _direction, const float _principalAngle);
 };

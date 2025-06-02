@@ -6,7 +6,7 @@
 using namespace Input;
 
 RustySidearm::RustySidearm(Level* _level)
-	: Gun(_level, RectangleShapeData({ 20.0f,20.0f }, "RustySidearm"), "RustySidearm", Rarity::R_NONE,
+	: Gun(_level, RectangleShapeData({ 20.0f,7.0f }, "RustySidearm"), "RustySidearm", Rarity::R_NONE,
 		new GunData(6, -1, -1, 6,
 			0.20f, 1.2f, 16,
 			16, 10, 7, 1))
@@ -43,8 +43,14 @@ void RustySidearm::Shoot()
 	{
 		_direction = _direction.normalized();
 	}
+
 	const Vector2f& _ownerSize = GetMesh()->GetShape()->GetDrawable()->getGlobalBounds().size;
-	gunComponent->Shoot(_direction, _ownerSize);
+
+	// Calcul de la position de spawn au bout de l'arme
+	const Vector2f _spawnPosition = GetPosition() + (_direction * (_ownerSize.x / 2.0f));
+
+	// Appel à gunComponent->Shoot avec la position de spawn
+	gunComponent->Shoot(_direction, _ownerSize, _spawnPosition);
 }
 
 void RustySidearm::Reload()

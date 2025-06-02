@@ -34,7 +34,7 @@ void GunComponent::BeginPlay()
 	isInReload = false;
 }
 
-void GunComponent::Shoot(const Vector2f& _direction, const Vector2f& _ownerSize)
+void GunComponent::Shoot(const Vector2f& _direction, const Vector2f& _ownerSize, const Vector2f& _spawnPosition)
 {
 	float _principalAngle = atan2(_direction.x, _direction.y);
 
@@ -50,7 +50,7 @@ void GunComponent::Shoot(const Vector2f& _direction, const Vector2f& _ownerSize)
 			{
 				_finalDirection = ComputeFinalDirectionWithSpread(_i, _direction, _principalAngle);
 			}
-			_currentBullet->SetPosition({ owner->GetPosition().x + _ownerSize.x, owner->GetPosition().y - (_ownerSize.y / 2) });
+			_currentBullet->SetPosition(_spawnPosition);
 			_currentBullet->SetDirection(_finalDirection);
 			_currentBullet->Launch();
 		}
