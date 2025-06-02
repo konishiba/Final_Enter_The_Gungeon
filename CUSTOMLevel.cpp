@@ -14,6 +14,7 @@
 #include "SliderWidget.h"
 #include "CheckBoxWidget.h"
 #include "PlayerController.h"
+#include "RustySidearm.h"
 
 CUSTOMLevel::CUSTOMLevel(const string& _name) : Level(_name)
 {
@@ -85,5 +86,7 @@ void CUSTOMLevel::InitLevel()
 
 	SpawnActor<ParticleActor>(1000, 3.0f);
 
+
 	GetGameMode()->GetHUD()->AddToViewport(canvas);*/
+
 }

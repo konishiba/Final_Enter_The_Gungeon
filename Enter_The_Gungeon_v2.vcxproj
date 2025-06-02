@@ -149,6 +149,8 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="Bounds.cpp" />
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="BulletMovementComponent.cpp" />
     <ClCompile Include="ButtonWidget.cpp" />
     <ClCompile Include="CameraActor.cpp" />
     <ClCompile Include="CameraComponent.cpp" />
@@ -182,6 +184,8 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="GameMode.cpp" />
     <ClCompile Include="GIFWidget.cpp" />
+    <ClCompile Include="Gun.cpp" />
+    <ClCompile Include="GunComponent.cpp" />
     <ClCompile Include="HorizontalBox.cpp" />
     <ClCompile Include="HUD.cpp" />
     <ClCompile Include="ImageWidget.cpp" />
@@ -195,6 +199,8 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="MeshActor.cpp" />
     <ClCompile Include="Proto_Map.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="RotateToTargetComponent.cpp" />
+    <ClCompile Include="RustySidearm.cpp" />
     <ClCompile Include="StaticMeshComponent.cpp" />
     <ClCompile Include="PanelWidget.cpp" />
     <ClCompile Include="Particle.cpp" />
@@ -221,6 +227,8 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClCompile Include="VertexComponent.cpp" />
     <ClCompile Include="VertexObject.cpp" />
     <ClCompile Include="VerticalBox.cpp" />
+    <ClCompile Include="WeaponTestGameMode.cpp" />
+    <ClCompile Include="WeaponTestLevel.cpp" />
     <ClCompile Include="Widget.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +242,8 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="Bounds.h" />
     <ClInclude Include="Box.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="BulletMovementComponent.h" />
     <ClInclude Include="ButtonWidget.h" />
     <ClInclude Include="CameraActor.h" />
     <ClInclude Include="CameraComponent.h" />
@@ -269,6 +279,9 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="GameMode.h" />
     <ClInclude Include="GIFWidget.h" />
+    <ClInclude Include="Gun.h" />
+    <ClInclude Include="GunComponent.h" />
+    <ClInclude Include="GunData.h" />
     <ClInclude Include="HorizontalBox.h" />
     <ClInclude Include="HUD.h" />
     <ClInclude Include="ImageWidget.h" />
@@ -284,6 +297,9 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="MeshActor.h" />
     <ClInclude Include="Proto_Map.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="Rarity.h" />
+    <ClInclude Include="RotateToTargetComponent.h" />
+    <ClInclude Include="RustySidearm.h" />
     <ClInclude Include="StaticMeshComponent.h" />
     <ClInclude Include="PanelWidget.h" />
     <ClInclude Include="Particle.h" />
@@ -315,6 +331,8 @@ xcopy /y /d "..\SFML-3.0.0\bin\sfml-window-d-3.dll" "$(OutDir)"
     <ClInclude Include="VertexComponent.h" />
     <ClInclude Include="VertexObject.h" />
     <ClInclude Include="VerticalBox.h" />
+    <ClInclude Include="WeaponTestGameMode.h" />
+    <ClInclude Include="WeaponTestLevel.h" />
     <ClInclude Include="Widget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

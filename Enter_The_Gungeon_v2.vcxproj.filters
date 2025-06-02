@@ -262,6 +262,9 @@
     <Filter Include="Enter_The_Gungeon\Actor\Props">
       <UniqueIdentifier>{c7d06890-b097-4a29-93bb-bb9ac43bd20d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enter_The_Gungeon\Actor\Props\Guns">
+      <UniqueIdentifier>{79a73dc8-eea4-47d6-87eb-db74423d0397}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TextObject.cpp">
@@ -482,6 +485,29 @@
     </ClCompile>
     <ClCompile Include="ACursorProtoCollision.cpp">
       <Filter>Source Files</Filter>
+    <ClCompile Include="GunComponent.cpp">
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletMovementComponent.cpp">
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClCompile>
+    <ClCompile Include="Gun.cpp">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClCompile>
+    <ClCompile Include="RustySidearm.cpp">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponTestLevel.cpp">
+      <Filter>Enter_The_Gungeon\Level\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="RotateToTargetComponent.cpp">
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponTestGameMode.cpp">
+      <Filter>Enter_The_Gungeon\GameMode\Proto</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -725,11 +751,40 @@
     <ClInclude Include="CustomActor.h">
       <Filter>Scripts\Examples\CustomActor</Filter>
     </ClInclude>
-    <ClInclude Include="LVL_ProtoCollision.h">
+      <ClInclude Include="LVL_ProtoCollision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ACursorProtoCollision.h">
       <Filter>Header Files</Filter>
+    <ClInclude Include="GunComponent.h">
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletMovementComponent.h">
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="Gun.h">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="GunData.h">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="Rarity.h">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="RustySidearm.h">
+      <Filter>Enter_The_Gungeon\Actor\Props\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="RotateToTargetComponent.h">
+      <Filter>Enter_The_Gungeon\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponTestGameMode.h">
+      <Filter>Enter_The_Gungeon\GameMode\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponTestLevel.h">
+      <Filter>Enter_The_Gungeon\Level\Proto</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

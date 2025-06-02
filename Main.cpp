@@ -3,6 +3,8 @@
 #include "LVL_ProtoCollision.h"
 #include "Proto_Map.h"
 
+#include "WeaponTestLevel.h"
+#include "CUSTOMLevel.h"
 
 void InitConfig()
 {
@@ -16,6 +18,9 @@ int main()
 	InitConfig();
 
 	Proto_Map* _level = new Proto_Map("mapTest");
+
+	//WeaponTestlevel* _level = new WeaponTestlevel("LevelTestWeapon");
+
 	M_LEVEL.SetLevel(_level);
 
 	Engine _engine;
