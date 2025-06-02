@@ -150,3 +150,15 @@ void AActor::RemoveComponent(UComponent* _component)
 {
 	components.erase(components.find(_component));
 }
+
+AActor* AActor::GetChildByName(const string& _name)
+{
+	for (AActor* child : children)
+	{
+		if (child->GetName() == _name)
+		{
+			return child;
+		}
+	}
+	return nullptr;
+}

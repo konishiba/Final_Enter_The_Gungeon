@@ -16,5 +16,7 @@ public:
 
 protected:
 	virtual void SetupInputController(Input::InputManager& _inputManager) override;
+	virtual void BeginPlay() override;
+	void Init();
 };
 

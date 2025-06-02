@@ -71,3 +71,15 @@ void ETG_CharacterPawn::SetupInputController(Input::InputManager& _inputManager)
 	_moveInputs->Enable();
 
 }
+
+void ETG_CharacterPawn::BeginPlay()
+{
+	Super::BeginPlay();
+	Init();
+}
+
+void ETG_CharacterPawn::Init()
+{
+	CreateSocket("WeaponSocket", TransformData(), AttachmentType::AT_SNAP_TO_TARGET);
+
+}

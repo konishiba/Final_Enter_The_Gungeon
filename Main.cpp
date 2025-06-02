@@ -2,7 +2,7 @@
 #include "LevelManager.h"
 #include "LVL_ProtoCollision.h"
 #include "Proto_Map.h"
-
+#include "ETG_CharacterLevel.h"
 #include "WeaponTestLevel.h"
 #include "CUSTOMLevel.h"
 
@@ -17,9 +17,11 @@ int main()
 {
 	InitConfig();
 
-	Proto_Map* _level = new Proto_Map("mapTest");
+	//Proto_Map* _level = new Proto_Map("mapTest");
 
 	//WeaponTestlevel* _level = new WeaponTestlevel("LevelTestWeapon");
+
+	ETG_CharacterLevel* _level = new ETG_CharacterLevel("ETG_CharacterLevel");
 
 	M_LEVEL.SetLevel(_level);
 

@@ -381,6 +381,7 @@ public:
 	void SetName(const string& _name);
 	void CreateSocket(const string& _name, const TransformData& _transform = TransformData(), const AttachmentType& _type = AT_SNAP_TO_TARGET);
 	void Destroy();
+	AActor* GetChildByName(const string& _name);
 
 	#pragma region Components
 
